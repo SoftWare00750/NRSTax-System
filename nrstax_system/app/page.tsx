@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import logo from '../public/images/logo.jpg';
 import { 
   Shield, Users, FileText, DollarSign, TrendingUp, Settings,
   Bell, LogOut, Search, Plus, Eye, EyeOff, Download, Upload,
@@ -168,7 +170,7 @@ const demoUsers: User[] = [
   },
   {
     id: '3',
-    name: 'John Doe',
+    name: 'Tax Payer',
     email: 'john@example.com',
     role: UserRole.Taxpayer,
     tin: 'NRS20240001',
@@ -386,8 +388,13 @@ const Header: React.FC<{ user: User | null; onLogout: () => void }> = ({ user, o
     <div className="max-w-7xl mx-auto px-4 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center">
-            <Shield className="h-8 w-8 text-white" />
+          <div className="w-13 h-13 bg-green-700 flex items-left justify-center">
+           <Image 
+        src={logo} 
+        alt="Description of my image" 
+        width={200} 
+        height={400} 
+      />
           </div>
           <div>
             <h1 className="text-xl font-bold text-gray-900">Nigeria Revenue Service</h1>
